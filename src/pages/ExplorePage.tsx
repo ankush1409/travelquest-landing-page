@@ -1,11 +1,10 @@
-import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 // Animation variants
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
+  animate: { opacity: 1, y: 0 }
 }
 
 const staggerContainer = {
@@ -112,12 +111,13 @@ const ExplorePage = () => {
             variants={staggerContainer}
             className="space-y-8"
           >
-            <motion.div variants={fadeInUp} className="mb-8">
+            <motion.div variants={fadeInUp} transition={{ duration: 0.6 }} className="mb-8">
               <i className="fas fa-map-marked-alt text-6xl text-white/90 mb-6"></i>
             </motion.div>
             
             <motion.h1 
               variants={fadeInUp}
+              transition={{ duration: 0.6 }}
               className="text-5xl md:text-7xl font-bold text-white mb-6"
             >
               Your Passport to Discovery
@@ -125,6 +125,7 @@ const ExplorePage = () => {
             
             <motion.p 
               variants={fadeInUp}
+              transition={{ duration: 0.6 }}
               className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed"
             >
               Explore unique destinations, track your visits, and unlock fun facts and badges.
@@ -132,6 +133,7 @@ const ExplorePage = () => {
             
             <motion.div 
               variants={fadeInUp}
+              transition={{ duration: 0.6 }}
               className="flex justify-center pt-8"
             >
               <button className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg">
@@ -167,10 +169,11 @@ const ExplorePage = () => {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {destinations.map((destination, index) => (
+            {destinations.map((destination) => (
               <motion.div
                 key={destination.id}
                 variants={fadeInUp}
+                transition={{ duration: 0.6 }}
                 className="card overflow-hidden group cursor-pointer"
               >
                 <div className="relative overflow-hidden">
@@ -225,7 +228,7 @@ const ExplorePage = () => {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-3 gap-12"
           >
-            <motion.div variants={fadeInUp} className="text-center">
+            <motion.div variants={fadeInUp} transition={{ duration: 0.6 }} className="text-center">
               <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
                 1
               </div>
@@ -235,7 +238,7 @@ const ExplorePage = () => {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="text-center">
+            <motion.div variants={fadeInUp} transition={{ duration: 0.6 }} className="text-center">
               <div className="w-20 h-20 bg-secondary-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
                 2
               </div>
@@ -245,7 +248,7 @@ const ExplorePage = () => {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="text-center">
+            <motion.div variants={fadeInUp} transition={{ duration: 0.6 }} className="text-center">
               <div className="w-20 h-20 bg-accent-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
                 3
               </div>
